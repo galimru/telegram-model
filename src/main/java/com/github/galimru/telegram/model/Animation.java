@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Animation implements Serializable {
     private static final long serialVersionUID = 5734939048630147740L;
 
@@ -28,40 +30,45 @@ public class Animation implements Serializable {
         return fileId;
     }
 
-    public void setFileId(String fileId) {
+    public Animation setFileId(String fileId) {
         this.fileId = fileId;
+        return this;
     }
 
     public PhotoSize getThumb() {
         return thumb;
     }
 
-    public void setThumb(PhotoSize thumb) {
+    public Animation setThumb(PhotoSize thumb) {
         this.thumb = thumb;
+        return this;
     }
 
     public String getFileName() {
         return fileName;
     }
 
-    public void setFileName(String fileName) {
+    public Animation setFileName(String fileName) {
         this.fileName = fileName;
+        return this;
     }
 
     public String getMimeType() {
         return mimeType;
     }
 
-    public void setMimeType(String mimeType) {
+    public Animation setMimeType(String mimeType) {
         this.mimeType = mimeType;
+        return this;
     }
 
     public Integer getFileSize() {
         return fileSize;
     }
 
-    public void setFileSize(Integer fileSize) {
+    public Animation setFileSize(Integer fileSize) {
         this.fileSize = fileSize;
+        return this;
     }
 
     @Override

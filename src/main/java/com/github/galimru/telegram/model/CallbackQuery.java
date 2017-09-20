@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CallbackQuery implements Serializable {
     private static final long serialVersionUID = 464484152798434695L;
 
@@ -34,56 +36,63 @@ public class CallbackQuery implements Serializable {
         return id;
     }
 
-    public void setId(String id) {
+    public CallbackQuery setId(String id) {
         this.id = id;
+        return this;
     }
 
     public User getFrom() {
         return from;
     }
 
-    public void setFrom(User from) {
+    public CallbackQuery setFrom(User from) {
         this.from = from;
+        return this;
     }
 
     public Message getMessage() {
         return message;
     }
 
-    public void setMessage(Message message) {
+    public CallbackQuery setMessage(Message message) {
         this.message = message;
+        return this;
     }
 
     public String getInlineMessageId() {
         return inlineMessageId;
     }
 
-    public void setInlineMessageId(String inlineMessageId) {
+    public CallbackQuery setInlineMessageId(String inlineMessageId) {
         this.inlineMessageId = inlineMessageId;
+        return this;
     }
 
     public String getChatInstance() {
         return chatInstance;
     }
 
-    public void setChatInstance(String chatInstance) {
+    public CallbackQuery setChatInstance(String chatInstance) {
         this.chatInstance = chatInstance;
+        return this;
     }
 
     public String getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public CallbackQuery setData(String data) {
         this.data = data;
+        return this;
     }
 
     public String getGameShortName() {
         return gameShortName;
     }
 
-    public void setGameShortName(String gameShortName) {
+    public CallbackQuery setGameShortName(String gameShortName) {
         this.gameShortName = gameShortName;
+        return this;
     }
 
     @Override

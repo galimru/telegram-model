@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class MessageEntity implements Serializable {
     private static final long serialVersionUID = 6069400856606042934L;
 
@@ -28,40 +30,45 @@ public class MessageEntity implements Serializable {
         return type;
     }
 
-    public void setType(String type) {
+    public MessageEntity setType(String type) {
         this.type = type;
+        return this;
     }
 
     public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(Integer offset) {
+    public MessageEntity setOffset(Integer offset) {
         this.offset = offset;
+        return this;
     }
 
     public Integer getLength() {
         return length;
     }
 
-    public void setLength(Integer length) {
+    public MessageEntity setLength(Integer length) {
         this.length = length;
+        return this;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
+    public MessageEntity setUrl(String url) {
         this.url = url;
+        return this;
     }
 
     public User getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public MessageEntity setUser(User user) {
         this.user = user;
+        return this;
     }
 
     @Override

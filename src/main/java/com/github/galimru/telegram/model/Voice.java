@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Voice implements Serializable {
     private static final long serialVersionUID = -8797092126678575591L;
 
@@ -25,32 +27,36 @@ public class Voice implements Serializable {
         return fileId;
     }
 
-    public void setFileId(String fileId) {
+    public Voice setFileId(String fileId) {
         this.fileId = fileId;
+        return this;
     }
 
     public Integer getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public Voice setDuration(Integer duration) {
         this.duration = duration;
+        return this;
     }
 
     public String getMimeType() {
         return mimeType;
     }
 
-    public void setMimeType(String mimeType) {
+    public Voice setMimeType(String mimeType) {
         this.mimeType = mimeType;
+        return this;
     }
 
     public Integer getFileSize() {
         return fileSize;
     }
 
-    public void setFileSize(Integer fileSize) {
+    public Voice setFileSize(Integer fileSize) {
         this.fileSize = fileSize;
+        return this;
     }
 
     @Override

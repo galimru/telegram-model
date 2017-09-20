@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Sticker implements Serializable {
     private static final long serialVersionUID = 5316284251439704226L;
 
@@ -37,64 +39,72 @@ public class Sticker implements Serializable {
         return fileId;
     }
 
-    public void setFileId(String fileId) {
+    public Sticker setFileId(String fileId) {
         this.fileId = fileId;
+        return this;
     }
 
     public Integer getWidth() {
         return width;
     }
 
-    public void setWidth(Integer width) {
+    public Sticker setWidth(Integer width) {
         this.width = width;
+        return this;
     }
 
     public Integer getHeight() {
         return height;
     }
 
-    public void setHeight(Integer height) {
+    public Sticker setHeight(Integer height) {
         this.height = height;
+        return this;
     }
 
     public PhotoSize getThumb() {
         return thumb;
     }
 
-    public void setThumb(PhotoSize thumb) {
+    public Sticker setThumb(PhotoSize thumb) {
         this.thumb = thumb;
+        return this;
     }
 
     public String getEmoji() {
         return emoji;
     }
 
-    public void setEmoji(String emoji) {
+    public Sticker setEmoji(String emoji) {
         this.emoji = emoji;
+        return this;
     }
 
     public String getSetName() {
         return setName;
     }
 
-    public void setSetName(String setName) {
+    public Sticker setSetName(String setName) {
         this.setName = setName;
+        return this;
     }
 
     public MaskPosition getMaskPosition() {
         return maskPosition;
     }
 
-    public void setMaskPosition(MaskPosition maskPosition) {
+    public Sticker setMaskPosition(MaskPosition maskPosition) {
         this.maskPosition = maskPosition;
+        return this;
     }
 
     public Integer getFileSize() {
         return fileSize;
     }
 
-    public void setFileSize(Integer fileSize) {
+    public Sticker setFileSize(Integer fileSize) {
         this.fileSize = fileSize;
+        return this;
     }
 
     @Override

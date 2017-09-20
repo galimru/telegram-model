@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class InlineQuery implements Serializable {
     private static final long serialVersionUID = -5576345499845554035L;
 
@@ -28,40 +30,45 @@ public class InlineQuery implements Serializable {
         return id;
     }
 
-    public void setId(String id) {
+    public InlineQuery setId(String id) {
         this.id = id;
+        return this;
     }
 
     public User getFrom() {
         return from;
     }
 
-    public void setFrom(User from) {
+    public InlineQuery setFrom(User from) {
         this.from = from;
+        return this;
     }
 
     public Location getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public InlineQuery setLocation(Location location) {
         this.location = location;
+        return this;
     }
 
     public String getQuery() {
         return query;
     }
 
-    public void setQuery(String query) {
+    public InlineQuery setQuery(String query) {
         this.query = query;
+        return this;
     }
 
     public String getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public InlineQuery setOffset(String offset) {
         this.offset = offset;
+        return this;
     }
 
     @Override

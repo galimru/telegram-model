@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Location implements Serializable {
     private static final long serialVersionUID = 5505762429468760213L;
 
@@ -19,16 +21,18 @@ public class Location implements Serializable {
         return longitude;
     }
 
-    public void setLongitude(Float longitude) {
+    public Location setLongitude(Float longitude) {
         this.longitude = longitude;
+        return this;
     }
 
     public Float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(Float latitude) {
+    public Location setLatitude(Float latitude) {
         this.latitude = latitude;
+        return this;
     }
 
     @Override

@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Venue implements Serializable {
     private static final long serialVersionUID = -3091755494927881669L;
 
@@ -25,32 +27,36 @@ public class Venue implements Serializable {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public Venue setLocation(Location location) {
         this.location = location;
+        return this;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public Venue setTitle(String title) {
         this.title = title;
+        return this;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public Venue setAddress(String address) {
         this.address = address;
+        return this;
     }
 
     public String getFoursquareId() {
         return foursquareId;
     }
 
-    public void setFoursquareId(String foursquareId) {
+    public Venue setFoursquareId(String foursquareId) {
         this.foursquareId = foursquareId;
+        return this;
     }
 
     @Override

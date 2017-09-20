@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ChatPhoto implements Serializable {
     private static final long serialVersionUID = 1521698188691806842L;
 
@@ -19,16 +21,18 @@ public class ChatPhoto implements Serializable {
         return smallFileId;
     }
 
-    public void setSmallFileId(String smallFileId) {
+    public ChatPhoto setSmallFileId(String smallFileId) {
         this.smallFileId = smallFileId;
+        return this;
     }
 
     public String getBigFileId() {
         return bigFileId;
     }
 
-    public void setBigFileId(String bigFileId) {
+    public ChatPhoto setBigFileId(String bigFileId) {
         this.bigFileId = bigFileId;
+        return this;
     }
 
     @Override

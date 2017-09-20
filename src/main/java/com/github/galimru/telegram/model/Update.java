@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Update implements Serializable {
     private static final long serialVersionUID = -7340254223528428111L;
 
@@ -43,80 +45,90 @@ public class Update implements Serializable {
         return updateId;
     }
 
-    public void setUpdateId(Integer updateId) {
+    public Update setUpdateId(Integer updateId) {
         this.updateId = updateId;
+        return this;
     }
 
     public Message getMessage() {
         return message;
     }
 
-    public void setMessage(Message message) {
+    public Update setMessage(Message message) {
         this.message = message;
+        return this;
     }
 
     public Message getEditedMessage() {
         return editedMessage;
     }
 
-    public void setEditedMessage(Message editedMessage) {
+    public Update setEditedMessage(Message editedMessage) {
         this.editedMessage = editedMessage;
+        return this;
     }
 
     public Message getChannelPost() {
         return channelPost;
     }
 
-    public void setChannelPost(Message channelPost) {
+    public Update setChannelPost(Message channelPost) {
         this.channelPost = channelPost;
+        return this;
     }
 
     public Message getEditedChannelPost() {
         return editedChannelPost;
     }
 
-    public void setEditedChannelPost(Message editedChannelPost) {
+    public Update setEditedChannelPost(Message editedChannelPost) {
         this.editedChannelPost = editedChannelPost;
+        return this;
     }
 
     public InlineQuery getInlineQuery() {
         return inlineQuery;
     }
 
-    public void setInlineQuery(InlineQuery inlineQuery) {
+    public Update setInlineQuery(InlineQuery inlineQuery) {
         this.inlineQuery = inlineQuery;
+        return this;
     }
 
     public ChosenInlineResult getChosenInlineResult() {
         return chosenInlineResult;
     }
 
-    public void setChosenInlineResult(ChosenInlineResult chosenInlineResult) {
+    public Update setChosenInlineResult(ChosenInlineResult chosenInlineResult) {
         this.chosenInlineResult = chosenInlineResult;
+        return this;
     }
 
     public CallbackQuery getCallbackQuery() {
         return callbackQuery;
     }
 
-    public void setCallbackQuery(CallbackQuery callbackQuery) {
+    public Update setCallbackQuery(CallbackQuery callbackQuery) {
         this.callbackQuery = callbackQuery;
+        return this;
     }
 
     public String getShippingQuery() {
         return shippingQuery;
     }
 
-    public void setShippingQuery(String shippingQuery) {
+    public Update setShippingQuery(String shippingQuery) {
         this.shippingQuery = shippingQuery;
+        return this;
     }
 
     public String getPreCheckoutQuery() {
         return preCheckoutQuery;
     }
 
-    public void setPreCheckoutQuery(String preCheckoutQuery) {
+    public Update setPreCheckoutQuery(String preCheckoutQuery) {
         this.preCheckoutQuery = preCheckoutQuery;
+        return this;
     }
 
     @Override

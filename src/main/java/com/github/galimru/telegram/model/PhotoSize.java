@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PhotoSize implements Serializable {
     private static final long serialVersionUID = -3020020935107108932L;
 
@@ -25,32 +27,36 @@ public class PhotoSize implements Serializable {
         return fileId;
     }
 
-    public void setFileId(String fileId) {
+    public PhotoSize setFileId(String fileId) {
         this.fileId = fileId;
+        return this;
     }
 
     public Integer getWidth() {
         return width;
     }
 
-    public void setWidth(Integer width) {
+    public PhotoSize setWidth(Integer width) {
         this.width = width;
+        return this;
     }
 
     public Integer getHeight() {
         return height;
     }
 
-    public void setHeight(Integer height) {
+    public PhotoSize setHeight(Integer height) {
         this.height = height;
+        return this;
     }
 
     public Integer getFileSize() {
         return fileSize;
     }
 
-    public void setFileSize(Integer fileSize) {
+    public PhotoSize setFileSize(Integer fileSize) {
         this.fileSize = fileSize;
+        return this;
     }
 
     @Override

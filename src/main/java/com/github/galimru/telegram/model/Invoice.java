@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Invoice implements Serializable {
     private static final long serialVersionUID = 1048297226985741657L;
 
@@ -28,40 +30,45 @@ public class Invoice implements Serializable {
         return title;
     }
 
-    public void setTitle(String title) {
+    public Invoice setTitle(String title) {
         this.title = title;
+        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public Invoice setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     public String getStartParameter() {
         return startParameter;
     }
 
-    public void setStartParameter(String startParameter) {
+    public Invoice setStartParameter(String startParameter) {
         this.startParameter = startParameter;
+        return this;
     }
 
     public String getCurrency() {
         return currency;
     }
 
-    public void setCurrency(String currency) {
+    public Invoice setCurrency(String currency) {
         this.currency = currency;
+        return this;
     }
 
     public Integer getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(Integer totalAmount) {
+    public Invoice setTotalAmount(Integer totalAmount) {
         this.totalAmount = totalAmount;
+        return this;
     }
 
     @Override

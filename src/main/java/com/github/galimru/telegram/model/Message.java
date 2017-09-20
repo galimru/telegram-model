@@ -1,10 +1,12 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Message implements Serializable {
     private static final long serialVersionUID = 4762676246866525581L;
 
@@ -15,9 +17,11 @@ public class Message implements Serializable {
     private static final String FORWARD_FROM_FIELD = "forward_from";
     private static final String FORWARD_FROM_CHAT_FIELD = "forward_from_chat";
     private static final String FORWARD_FROM_MESSAGE_ID_FIELD = "forward_from_message_id";
+    private static final String FORWARD_SIGNATURE_FIELD = "forward_signature";
     private static final String FORWARD_DATE_FIELD = "forward_date";
     private static final String REPLY_TO_MESSAGE_FIELD = "reply_to_message";
     private static final String EDIT_DATE_FIELD = "edit_date";
+    private static final String AUTHOR_SIGNATURE_FIELD = "author_signature";
     private static final String TEXT_FIELD = "text";
     private static final String ENTITIES_FIELD = "entities";
     private static final String AUDIO_FIELD = "audio";
@@ -61,12 +65,16 @@ public class Message implements Serializable {
     private Chat forwardFromChat;
     @JsonProperty(value = FORWARD_FROM_MESSAGE_ID_FIELD)
     private Integer forwardFromMessageId;
+    @JsonProperty(value = FORWARD_SIGNATURE_FIELD)
+    private String forwardSignature;
     @JsonProperty(value = FORWARD_DATE_FIELD)
     private Integer forwardDate;
     @JsonProperty(value = REPLY_TO_MESSAGE_FIELD)
     private Message replyToMessage;
     @JsonProperty(value = EDIT_DATE_FIELD)
     private Integer editDate;
+    @JsonProperty(value = AUTHOR_SIGNATURE_FIELD)
+    private String authorSignature;
     @JsonProperty(value = TEXT_FIELD)
     private String text;
     @JsonProperty(value = ENTITIES_FIELD)
@@ -128,304 +136,360 @@ public class Message implements Serializable {
         return messageId;
     }
 
-    public void setMessageId(Integer messageId) {
+    public Message setMessageId(Integer messageId) {
         this.messageId = messageId;
+        return this;
     }
 
     public User getFrom() {
         return from;
     }
 
-    public void setFrom(User from) {
+    public Message setFrom(User from) {
         this.from = from;
+        return this;
     }
 
     public Integer getDate() {
         return date;
     }
 
-    public void setDate(Integer date) {
+    public Message setDate(Integer date) {
         this.date = date;
+        return this;
     }
 
     public Chat getChat() {
         return chat;
     }
 
-    public void setChat(Chat chat) {
+    public Message setChat(Chat chat) {
         this.chat = chat;
+        return this;
     }
 
     public User getForwardFrom() {
         return forwardFrom;
     }
 
-    public void setForwardFrom(User forwardFrom) {
+    public Message setForwardFrom(User forwardFrom) {
         this.forwardFrom = forwardFrom;
+        return this;
     }
 
     public Chat getForwardFromChat() {
         return forwardFromChat;
     }
 
-    public void setForwardFromChat(Chat forwardFromChat) {
+    public Message setForwardFromChat(Chat forwardFromChat) {
         this.forwardFromChat = forwardFromChat;
+        return this;
     }
 
     public Integer getForwardFromMessageId() {
         return forwardFromMessageId;
     }
 
-    public void setForwardFromMessageId(Integer forwardFromMessageId) {
+    public Message setForwardFromMessageId(Integer forwardFromMessageId) {
         this.forwardFromMessageId = forwardFromMessageId;
+        return this;
+    }
+
+    public String getForwardSignature() {
+        return forwardSignature;
+    }
+
+    public Message setForwardSignature(String forwardSignature) {
+        this.forwardSignature = forwardSignature;
+        return this;
     }
 
     public Integer getForwardDate() {
         return forwardDate;
     }
 
-    public void setForwardDate(Integer forwardDate) {
+    public Message setForwardDate(Integer forwardDate) {
         this.forwardDate = forwardDate;
+        return this;
     }
 
     public Message getReplyToMessage() {
         return replyToMessage;
     }
 
-    public void setReplyToMessage(Message replyToMessage) {
+    public Message setReplyToMessage(Message replyToMessage) {
         this.replyToMessage = replyToMessage;
+        return this;
     }
 
     public Integer getEditDate() {
         return editDate;
     }
 
-    public void setEditDate(Integer editDate) {
+    public Message setEditDate(Integer editDate) {
         this.editDate = editDate;
+        return this;
+    }
+
+    public String getAuthorSignature() {
+        return authorSignature;
+    }
+
+    public Message setAuthorSignature(String authorSignature) {
+        this.authorSignature = authorSignature;
+        return this;
     }
 
     public String getText() {
         return text;
     }
 
-    public void setText(String text) {
+    public Message setText(String text) {
         this.text = text;
+        return this;
     }
 
     public List<MessageEntity> getEntities() {
         return entities;
     }
 
-    public void setEntities(List<MessageEntity> entities) {
+    public Message setEntities(List<MessageEntity> entities) {
         this.entities = entities;
+        return this;
     }
 
     public Audio getAudio() {
         return audio;
     }
 
-    public void setAudio(Audio audio) {
+    public Message setAudio(Audio audio) {
         this.audio = audio;
+        return this;
     }
 
     public Document getDocument() {
         return document;
     }
 
-    public void setDocument(Document document) {
+    public Message setDocument(Document document) {
         this.document = document;
+        return this;
     }
 
     public Game getGame() {
         return game;
     }
 
-    public void setGame(Game game) {
+    public Message setGame(Game game) {
         this.game = game;
+        return this;
     }
 
     public List<PhotoSize> getPhoto() {
         return photo;
     }
 
-    public void setPhoto(List<PhotoSize> photo) {
+    public Message setPhoto(List<PhotoSize> photo) {
         this.photo = photo;
+        return this;
     }
 
     public Sticker getSticker() {
         return sticker;
     }
 
-    public void setSticker(Sticker sticker) {
+    public Message setSticker(Sticker sticker) {
         this.sticker = sticker;
+        return this;
     }
 
     public Video getVideo() {
         return video;
     }
 
-    public void setVideo(Video video) {
+    public Message setVideo(Video video) {
         this.video = video;
+        return this;
     }
 
     public Voice getVoice() {
         return voice;
     }
 
-    public void setVoice(Voice voice) {
+    public Message setVoice(Voice voice) {
         this.voice = voice;
+        return this;
     }
 
     public VideoNote getVideoNote() {
         return videoNote;
     }
 
-    public void setVideoNote(VideoNote videoNote) {
+    public Message setVideoNote(VideoNote videoNote) {
         this.videoNote = videoNote;
+        return this;
     }
 
     public List<User> getNewChatMembers() {
         return newChatMembers;
     }
 
-    public void setNewChatMembers(List<User> newChatMembers) {
+    public Message setNewChatMembers(List<User> newChatMembers) {
         this.newChatMembers = newChatMembers;
+        return this;
     }
 
     public String getCaption() {
         return caption;
     }
 
-    public void setCaption(String caption) {
+    public Message setCaption(String caption) {
         this.caption = caption;
+        return this;
     }
 
     public Contact getContact() {
         return contact;
     }
 
-    public void setContact(Contact contact) {
+    public Message setContact(Contact contact) {
         this.contact = contact;
+        return this;
     }
 
     public Location getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public Message setLocation(Location location) {
         this.location = location;
+        return this;
     }
 
     public Venue getVenue() {
         return venue;
     }
 
-    public void setVenue(Venue venue) {
+    public Message setVenue(Venue venue) {
         this.venue = venue;
+        return this;
     }
 
     public User getNewChatMember() {
         return newChatMember;
     }
 
-    public void setNewChatMember(User newChatMember) {
+    public Message setNewChatMember(User newChatMember) {
         this.newChatMember = newChatMember;
+        return this;
     }
 
     public User getLeftChatMember() {
         return leftChatMember;
     }
 
-    public void setLeftChatMember(User leftChatMember) {
+    public Message setLeftChatMember(User leftChatMember) {
         this.leftChatMember = leftChatMember;
+        return this;
     }
 
     public String getNewChatTitle() {
         return newChatTitle;
     }
 
-    public void setNewChatTitle(String newChatTitle) {
+    public Message setNewChatTitle(String newChatTitle) {
         this.newChatTitle = newChatTitle;
+        return this;
     }
 
     public List<PhotoSize> getNewChatPhoto() {
         return newChatPhoto;
     }
 
-    public void setNewChatPhoto(List<PhotoSize> newChatPhoto) {
+    public Message setNewChatPhoto(List<PhotoSize> newChatPhoto) {
         this.newChatPhoto = newChatPhoto;
+        return this;
     }
 
     public Boolean getDeleteChatPhoto() {
         return deleteChatPhoto;
     }
 
-    public void setDeleteChatPhoto(Boolean deleteChatPhoto) {
+    public Message setDeleteChatPhoto(Boolean deleteChatPhoto) {
         this.deleteChatPhoto = deleteChatPhoto;
+        return this;
     }
 
     public Boolean getGroupChatCreated() {
         return groupChatCreated;
     }
 
-    public void setGroupChatCreated(Boolean groupChatCreated) {
+    public Message setGroupChatCreated(Boolean groupChatCreated) {
         this.groupChatCreated = groupChatCreated;
+        return this;
     }
 
     public Boolean getSupergroupChatCreated() {
         return supergroupChatCreated;
     }
 
-    public void setSupergroupChatCreated(Boolean supergroupChatCreated) {
+    public Message setSupergroupChatCreated(Boolean supergroupChatCreated) {
         this.supergroupChatCreated = supergroupChatCreated;
+        return this;
     }
 
     public Boolean getChannelChatCreated() {
         return channelChatCreated;
     }
 
-    public void setChannelChatCreated(Boolean channelChatCreated) {
+    public Message setChannelChatCreated(Boolean channelChatCreated) {
         this.channelChatCreated = channelChatCreated;
+        return this;
     }
 
     public Integer getMigrateToChatId() {
         return migrateToChatId;
     }
 
-    public void setMigrateToChatId(Integer migrateToChatId) {
+    public Message setMigrateToChatId(Integer migrateToChatId) {
         this.migrateToChatId = migrateToChatId;
+        return this;
     }
 
     public Integer getMigrateFromChatId() {
         return migrateFromChatId;
     }
 
-    public void setMigrateFromChatId(Integer migrateFromChatId) {
+    public Message setMigrateFromChatId(Integer migrateFromChatId) {
         this.migrateFromChatId = migrateFromChatId;
+        return this;
     }
 
     public Message getPinnedMessage() {
         return pinnedMessage;
     }
 
-    public void setPinnedMessage(Message pinnedMessage) {
+    public Message setPinnedMessage(Message pinnedMessage) {
         this.pinnedMessage = pinnedMessage;
+        return this;
     }
 
     public Invoice getInvoice() {
         return invoice;
     }
 
-    public void setInvoice(Invoice invoice) {
+    public Message setInvoice(Invoice invoice) {
         this.invoice = invoice;
+        return this;
     }
 
     public String getSuccessfulPayment() {
         return successfulPayment;
     }
 
-    public void setSuccessfulPayment(String successfulPayment) {
+    public Message setSuccessfulPayment(String successfulPayment) {
         this.successfulPayment = successfulPayment;
+        return this;
     }
 
     @Override
@@ -438,9 +502,11 @@ public class Message implements Serializable {
                 ", forwardFrom=" + forwardFrom +
                 ", forwardFromChat=" + forwardFromChat +
                 ", forwardFromMessageId=" + forwardFromMessageId +
+                ", forwardSignature='" + forwardSignature + '\'' +
                 ", forwardDate=" + forwardDate +
                 ", replyToMessage=" + replyToMessage +
                 ", editDate=" + editDate +
+                ", authorSignature='" + authorSignature + '\'' +
                 ", text='" + text + '\'' +
                 ", entities=" + entities +
                 ", audio=" + audio +

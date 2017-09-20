@@ -1,10 +1,12 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Game implements Serializable {
     private static final long serialVersionUID = -2511198543264716478L;
 
@@ -32,48 +34,54 @@ public class Game implements Serializable {
         return title;
     }
 
-    public void setTitle(String title) {
+    public Game setTitle(String title) {
         this.title = title;
+        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public Game setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     public List<PhotoSize> getPhoto() {
         return photo;
     }
 
-    public void setPhoto(List<PhotoSize> photo) {
+    public Game setPhoto(List<PhotoSize> photo) {
         this.photo = photo;
+        return this;
     }
 
     public String getText() {
         return text;
     }
 
-    public void setText(String text) {
+    public Game setText(String text) {
         this.text = text;
+        return this;
     }
 
     public List<MessageEntity> getTextEntities() {
         return textEntities;
     }
 
-    public void setTextEntities(List<MessageEntity> textEntities) {
+    public Game setTextEntities(List<MessageEntity> textEntities) {
         this.textEntities = textEntities;
+        return this;
     }
 
     public Animation getAnimation() {
         return animation;
     }
 
-    public void setAnimation(Animation animation) {
+    public Game setAnimation(Animation animation) {
         this.animation = animation;
+        return this;
     }
 
     @Override

@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class MaskPosition implements Serializable {
     private static final long serialVersionUID = 8759623172272812930L;
 
@@ -25,32 +27,36 @@ public class MaskPosition implements Serializable {
         return point;
     }
 
-    public void setPoint(String point) {
+    public MaskPosition setPoint(String point) {
         this.point = point;
+        return this;
     }
 
     public Float getxShift() {
         return xShift;
     }
 
-    public void setxShift(Float xShift) {
+    public MaskPosition setxShift(Float xShift) {
         this.xShift = xShift;
+        return this;
     }
 
     public Float getyShift() {
         return yShift;
     }
 
-    public void setyShift(Float yShift) {
+    public MaskPosition setyShift(Float yShift) {
         this.yShift = yShift;
+        return this;
     }
 
     public Float getScale() {
         return scale;
     }
 
-    public void setScale(Float scale) {
+    public MaskPosition setScale(Float scale) {
         this.scale = scale;
+        return this;
     }
 
     @Override

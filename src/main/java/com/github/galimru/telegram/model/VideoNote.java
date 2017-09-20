@@ -1,9 +1,11 @@
 package com.github.galimru.telegram.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class VideoNote implements Serializable {
     private static final long serialVersionUID = 9005095926255380328L;
 
@@ -28,40 +30,45 @@ public class VideoNote implements Serializable {
         return fileId;
     }
 
-    public void setFileId(String fileId) {
+    public VideoNote setFileId(String fileId) {
         this.fileId = fileId;
+        return this;
     }
 
     public Integer getLength() {
         return length;
     }
 
-    public void setLength(Integer length) {
+    public VideoNote setLength(Integer length) {
         this.length = length;
+        return this;
     }
 
     public Integer getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public VideoNote setDuration(Integer duration) {
         this.duration = duration;
+        return this;
     }
 
     public PhotoSize getThumb() {
         return thumb;
     }
 
-    public void setThumb(PhotoSize thumb) {
+    public VideoNote setThumb(PhotoSize thumb) {
         this.thumb = thumb;
+        return this;
     }
 
     public Integer getFileSize() {
         return fileSize;
     }
 
-    public void setFileSize(Integer fileSize) {
+    public VideoNote setFileSize(Integer fileSize) {
         this.fileSize = fileSize;
+        return this;
     }
 
     @Override
