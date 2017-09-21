@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ReplyKeyboardMarkup implements Serializable {
+public class ReplyKeyboardMarkup implements ReplyMarkup, Serializable {
     private static final long serialVersionUID = -7297718303010451935L;
 
     private static final String KEYBOARD_FIELD = "keyboard";
