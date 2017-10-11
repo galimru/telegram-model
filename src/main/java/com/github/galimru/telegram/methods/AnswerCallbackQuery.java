@@ -28,39 +28,44 @@ public class AnswerCallbackQuery extends AbstractMethod {
         return callbackQueryId;
     }
 
-    public void setCallbackQueryId(String callbackQueryId) {
+    public AnswerCallbackQuery setCallbackQueryId(String callbackQueryId) {
         this.callbackQueryId = callbackQueryId;
+        return this;
     }
 
     public String getText() {
         return text;
     }
 
-    public void setText(String text) {
+    public AnswerCallbackQuery setText(String text) {
         this.text = text;
+        return this;
     }
 
     public Boolean getShowAlert() {
         return showAlert;
     }
 
-    public void setShowAlert(Boolean showAlert) {
+    public AnswerCallbackQuery setShowAlert(Boolean showAlert) {
         this.showAlert = showAlert;
+        return this;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
+    public AnswerCallbackQuery setUrl(String url) {
         this.url = url;
+        return this;
     }
 
     public Integer getCacheTime() {
         return cacheTime;
     }
 
-    public void setCacheTime(Integer cacheTime) {
+    public AnswerCallbackQuery setCacheTime(Integer cacheTime) {
         this.cacheTime = cacheTime;
+        return this;
     }
 }
