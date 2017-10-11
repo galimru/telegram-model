@@ -57,4 +57,14 @@ public class EditMessageReplyMarkup extends AbstractMethod {
         this.replyMarkup = replyMarkup;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "EditMessageReplyMarkup{" +
+                "chatId='" + chatId + '\'' +
+                ", messageId=" + messageId +
+                ", inlineMessageId='" + inlineMessageId + '\'' +
+                ", replyMarkup=" + replyMarkup +
+                '}';
+    }
 }

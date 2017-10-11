@@ -68,4 +68,15 @@ public class AnswerCallbackQuery extends AbstractMethod {
         this.cacheTime = cacheTime;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "AnswerCallbackQuery{" +
+                "callbackQueryId='" + callbackQueryId + '\'' +
+                ", text='" + text + '\'' +
+                ", showAlert=" + showAlert +
+                ", url='" + url + '\'' +
+                ", cacheTime=" + cacheTime +
+                '}';
+    }
 }
